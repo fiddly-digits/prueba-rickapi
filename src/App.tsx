@@ -28,20 +28,24 @@ function App() {
 
   return (
     <>
-      <form onSubmit={handleSearch} className='search-bar'>
-        <input
-          type='text'
-          name='search'
-          placeholder='Busca Personaje'
-          className='search-bar--input'
-        />
-        <button className='search-bar--button'>Search</button>
-      </form>
-      <div className='container'>
-        {results.map((result, index) => (
-          <Card data={result} key={index} />
-        ))}
-      </div>
+      <header className='flex items-center justify-center max-w-screen-xl p-4'>
+        <form onSubmit={handleSearch} className='search-bar'>
+          <input
+            type='text'
+            name='search'
+            placeholder='Busca Personaje'
+            className='search-bar--input'
+          />
+          <button className='search-bar--button'>Search</button>
+        </form>
+      </header>
+      <main className='mx-auto max-w-7xl py-7'>
+        <div className='flex flex-wrap'>
+          {results.map((result, index) => (
+            <Card data={result} key={index} />
+          ))}
+        </div>
+      </main>
     </>
   );
 }
