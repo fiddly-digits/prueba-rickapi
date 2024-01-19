@@ -1,3 +1,5 @@
+import './Card.css';
+
 type props = {
   data: { name: string; status: string; image: string };
 };
@@ -5,9 +7,9 @@ type props = {
 export default function Card({ data }: props) {
   const { name, status, image } = data;
   return (
-    <div className='flex border'>
-      <img src={image} alt='' />
-      <h1>{name}</h1>
+    <div className='card'>
+      <img src={image} alt='photo' className='card-img' />
+      <h1 className='card-name'>{name}</h1>
       <p>{status}</p>
     </div>
   );
